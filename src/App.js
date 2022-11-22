@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createContext, useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import AddData from "./Component/AddData";
+import Home from "./Component/Home";
+import ShowData from "./Component/ShowData";
+
+export const MyContext = createContext([]);
 
 function App() {
+  const [totalData, setTotalData] = useState([]);
+  
+  useEffect(() =>{
+    const locatData= JSON.parse(localStorage.getItem("note"))  
+    setTotalData(locatData)
+  } , [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={{ totalData,  setTotalData }}>
+      <Routes>
+        <Route element={<Home />} path="/">
+          <Route
+            index
+            element={
+              <AddData  />
+            }
+          ></Route>
+          <Route
+            path="showData"
+            element={<ShowData  />}
+          ></Route>
+        </Route>
+      </Routes>
+    </MyContext.Provider>
   );
 }
 
