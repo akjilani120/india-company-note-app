@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { MyContext } from "../App";
 import TableRowShow from "./TableRowShow";
-
+import Table from 'react-bootstrap/Table';
 
 const ShowData = () => {
   const { totalData } = useContext(MyContext);
@@ -12,26 +12,25 @@ const ShowData = () => {
           ? "Sorry..Do not here any note"
           : "You are Note here "}
       </h1>
-
-      <div class="table-responsive">
-        <table class="table align-middle">
-          <thead>
-            <tr class="table-dark">
-              <th scope="col">No</th>
-              <th scope="col">Note Name</th>
-              <th scope="col">Note Title</th>
-              <th scope="col">Note Details</th>
-              <th scope="col">Delete Note</th>
-              <th scope="col">Edite Note</th>
-            </tr>
-          </thead>
-          <tbody>
-          {totalData?.map((data , index) => (
+      <Table responsive striped>
+      <thead >
+        <tr className="table-dark">
+          <th>No</th>
+          <th>Note Name</th>
+          <th>Note Title</th>
+          <th>Note Details</th>
+          <th>Delete Note</th>
+          <th>Edite Note</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+      {totalData?.map((data , index) => (
           <TableRowShow data={data} key={data.id}  index={index}/>
         ))}
-          </tbody>
-        </table>
-      </div>
+      </tbody>
+    </Table>
+     
       
     </div>
   );

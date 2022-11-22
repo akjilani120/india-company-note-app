@@ -12,19 +12,18 @@ const TableRowShow = ({ data, index }) => {
   };
 
   return (
-    
     <tr>
-      <th scope="row">{index + 1}</th>
-      <td>{name}</td>
-      <td>{title}</td>
-      <td>{description}</td>
-      <td>
-        <button onClick={handleDelete} className="btn btn-danger">
-          Delete
-        </button>
-      </td>
-      <td>
-        <button
+          <td>{index + 1}</td>
+          <td>{name}</td>
+          <td>{title}</td>
+          <td>{description}</td>
+          <td>
+          <button onClick={handleDelete} className="btn btn-danger">
+             Delete
+         </button>
+          </td>
+          <td>
+          <button
           type="button"
           class="btn btn-warning"
           data-bs-toggle="modal"
@@ -32,9 +31,32 @@ const TableRowShow = ({ data, index }) => {
         >
           update
         </button>
-        <ModalShow data={data} />
-      </td>
-    </tr>
+          </td>
+         
+     </tr>
+       
+    // <tr>
+    //   <th scope="row">{index + 1}</th>
+    //   <td>{name}</td>
+    //   <td>{title}</td>
+    //   <td>{description}</td>
+    //   <td>
+    //     <button onClick={handleDelete} className="btn btn-danger">
+    //       Delete
+    //     </button>
+    //   </td>
+    //   <td>
+    //     <button
+    //       type="button"
+    //       class="btn btn-warning"
+    //       data-bs-toggle="modal"
+    //       data-bs-target="#exampleModal"
+    //     >
+    //       update
+    //     </button>
+    //     <ModalShow data={data} />
+    //   </td>
+    // </tr>
   );
 };
 
