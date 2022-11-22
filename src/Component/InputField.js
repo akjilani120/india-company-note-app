@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputField = ({ setData, type, name, lableName, value, require }) => {
+const InputField = ({ setData, type, name, lableName,  placeHolder }) => {
   return (
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">
@@ -8,6 +8,8 @@ const InputField = ({ setData, type, name, lableName, value, require }) => {
       </label>
       <input
         type={type}
+        name={name}
+        placeholder={placeHolder}
         className="form-control"
         onChange={(e) => setData(e.target.value)}
         required

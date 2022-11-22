@@ -1,10 +1,8 @@
-import React, { createContext, useState } from 'react';
-import ShowData from './ShowData';
-
-import './Home.css'
-import { Link, Outlet } from 'react-router-dom';
+import React from 'react';
+import './Stylemodule.css'
+import {  Outlet } from 'react-router-dom';
 import CustomProfileLink from './CustomProfileLink';
-export const MyContext = createContext("Book Name")
+
 
 const Home = () => {
    

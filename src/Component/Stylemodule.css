@@ -39,6 +39,11 @@
     background-color: rgb(5, 5, 54);
     color: white;
 }
+.update-form{
+    width: 45%;
+    border: 1px solid skyblue;
+    padding: 25px;
+}
 @media screen and (max-width:768px) {
     .nav-side{
         width: 30%;
