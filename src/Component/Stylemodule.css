@@ -44,6 +44,10 @@
     border: 1px solid skyblue;
     padding: 25px;
 }
+.search-field-main{
+    width: 30%;
+    margin: 30px 10px;
+}
 @media screen and (max-width:768px) {
     .nav-side{
         width: 30%;

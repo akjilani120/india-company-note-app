@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import ModalShow from "./Modal";
 import { MyContext } from "../App";
 import { useNavigate } from "react-router-dom";
 const TableRowShow = ({ data, index }) => {
