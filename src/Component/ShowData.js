@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import { MyContext } from "../App";
 import TableRowShow from "./TableRowShow";
 import Table from 'react-bootstrap/Table';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import InputField from "./InputField";
 import SelectInput from "./SelectInput";
 
 const ShowData = () => {
