@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { useNavigate, useParams } from 'react-router-dom';
 import { MyContext } from '../App';
 import InputField from './InputField';
+import SelectInput from './SelectInput';
 
 const UpdateNote = () => {
     const { totalData, setTotalData , updateData  } = useContext(MyContext);
@@ -11,6 +12,7 @@ const UpdateNote = () => {
     const [updateName, setUpdateName] = useState("");
   const [updateTitle, setUpdateTitle] = useState("");
   const [updateMessage, setUpdateMessage] = useState("");
+  const [check , setCheck] = useState("Check")
   const handleUpdate = (e) => {
     e.preventDefault();
     const dataId = updateData.id 
@@ -18,6 +20,7 @@ const UpdateNote = () => {
      const updateMainData ={
         name : updateName,
         title : updateTitle,
+        check,
         description: updateMessage
      }
      setTotalData([...dataDele , updateMainData])
@@ -54,8 +57,9 @@ const UpdateNote = () => {
               placeHolder={updateData.description}
               setData={setUpdateMessage}
             />
+            <SelectInput className="" setData={setCheck} value1="Check" value2="Read" value3="Write" />
             <Button className="mt-3 px-4 py-2" variant="primary" type="submit">
-              Submit
+              Update
             </Button>
            </form>
            </div>

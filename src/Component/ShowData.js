@@ -5,26 +5,22 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import InputField from "./InputField";
+import SelectInput from "./SelectInput";
 
 const ShowData = () => {
   const { totalData } = useContext(MyContext);
   const [searchItems, setSearchItems] = useState("")
-  console.log("search value" , searchItems)
+  const handleReset =() =>{
+    setSearchItems("")
+  }
   return (
     <div>
        {
         totalData.length  < 1 ?
-          "" : <div className="search-field-main">
-          <InputGroup className="mb-3">
-           <InputGroup.Text className="bg-primary text-white" id="inputGroup-sizing-default" disabled>
-             Search 
-           </InputGroup.Text>
-           <Form.Control onChange={(e)=> setSearchItems(e.target.value)} placeholder="Search Note"
-             aria-label="Large"
-             aria-describedby="inputGroup-sizing-sm"
-           />
-         </InputGroup>
-              
+          "" : <div className="search-field-main d-flex">
+             <SelectInput className="form-section" setData={setSearchItems} value1="Check" value2="Read" value3="Write" />
+           
+           <button onClick={handleReset} className="btn btn-primary ms-3">Reset</button>   
           </div>
        }
        <div>
@@ -32,11 +28,12 @@ const ShowData = () => {
           ? <h1 className="text-center text-warning my-4">Sorry..Do not here any note</h1>
           : <Table responsive striped>
           <thead >
-            <tr className="table-dark">
+            <tr className="table-dark text-center">
               <th>No</th>
               <th>Note Name</th>
               <th>Note Title</th>
               <th>Note Details</th>
+              <th>Checking</th>
               <th>Delete Note</th>
               <th>Edite Note</th>
              
@@ -44,9 +41,9 @@ const ShowData = () => {
           </thead>
           <tbody>
           {totalData?.filter(value => {
-            if(searchItems == ""){
+            if(searchItems ===""){
               return value
-            }else if(value.name.toLowerCase().includes(searchItems.toLowerCase())){
+            }else if(value.check.toLowerCase().includes(searchItems.toLowerCase())){
               return   value
             }
           })

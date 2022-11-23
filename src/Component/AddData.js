@@ -2,18 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { MyContext } from "../App";
-
-
-
 import InputField from "./InputField";
+import SelectInput from "./SelectInput";
 const AddData = () => {
   const { totalData, setTotalData } = useContext(MyContext);
   const navigate = useNavigate();
   const [noteName, setNoteName] = useState("");
   const [noteTitle, setNoteTitle] = useState("");
   const [noteDescription, setNoteDescription] = useState("");
- 
- 
+  const [check , setCheck] = useState("check")
+  console.log("check" , check)
   const handleSubmit = (e) => {
     e.preventDefault();
     const uniqueId = parseInt(Math.random() * 1200000);
@@ -21,6 +19,7 @@ const AddData = () => {
       name: noteName,
       title: noteTitle,
       description: noteDescription,
+      check : check ,
       id: uniqueId,
     };
     setTotalData([...totalData, data]);   
@@ -58,7 +57,7 @@ const AddData = () => {
               value="address"
               setData={setNoteDescription}
             />
-
+          <SelectInput className="" setData={setCheck} value1="Check" value2="Read" value3="Write" />
             <Button className="mt-3 px-4 py-2" variant="primary" type="submit">
               Submit
             </Button>
