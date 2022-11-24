@@ -5,7 +5,7 @@ import AddData from "./Component/AddData";
 import Home from "./Component/Home";
 import ShowData from "./Component/ShowData";
 import UpdateNote from "./Component/UpdateNote";
-
+import MovieDataShow from "./Component/MovieDataShow";
 export const MyContext = createContext([]);
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
             path="showData"
             element={<ShowData  />}
           ></Route>
+          <Route path="movieData" element={<MovieDataShow/>}></Route>
         </Route>
         <Route path="/updateNote/:id" element={<UpdateNote/>}></Route>
       </Routes>

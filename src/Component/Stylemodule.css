@@ -45,9 +45,12 @@
     padding: 25px;
 }
 .search-field-main{
-    width: 30%;
+    width: 60%;
     margin: 30px 10px;
 }
+/* .search-select{
+    width: 50%;
+} */
 @media screen and (max-width:768px) {
     .nav-side{
         width: 30%;

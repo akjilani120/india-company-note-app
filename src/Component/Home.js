@@ -19,6 +19,7 @@ const Home = () => {
                     <li><CustomProfileLink className='navbar-link' to="/">Add Note</CustomProfileLink>
                 </li>
                     <li> <CustomProfileLink className='navbar-link' to="/showData"> Show Note</CustomProfileLink></li>
+                    <li> <CustomProfileLink className='navbar-link' to="/movieData"> Movie </CustomProfileLink></li>
                  </ul>
                 </div>
                 <div className='data-show-side p-3'>
