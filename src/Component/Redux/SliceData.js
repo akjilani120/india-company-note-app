@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getDatas = createAsyncThunk("movies/getDatas" , async() =>{
-    return fetch("https://www.themealdb.com/api/json/v1/1/search.php?s").then(res => res.json())
+    return fetch("https://fakestoreapi.com/products").then(res => res.json())
 })
 
  const datasSlice = createSlice({

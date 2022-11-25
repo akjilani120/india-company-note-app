@@ -1,22 +1,23 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+
 import Col from 'react-bootstrap/Col';
 const CardMovie = ({data}) => {
-    const {strMealThumb , strInstructions, strMeal    } = data
+    const {category , title, price , image  ,  description} = data
     return (
         <Col>
-          <Card className='card-main'>
-            <Card.Img variant="top" src={strMealThumb} />
-            <Card.Body>
-              <Card.Title>Food name:  {strMeal}</Card.Title>
-              <Card.Text>
-              Food Details : {strInstructions.slice(0, 100)}
-              </Card.Text>
-             <div>
-             <button className='d-block w-100 order-btn'> Order Now</button>
-             </div>
-            </Card.Body>
-          </Card>
+          <div className='card-main '>
+            <img className='movie-img' src={image} alt="product img" />
+            <div className="card-main-body">
+              <div>
+               
+                <p className='d-inline bg-warning price-name'> <b>Price</b> : $ {price}</p>
+                 <h6 className='mt-4'> <b>Name :</b> {category}</h6>
+                <p><b>Title :</b> {title}</p>
+                <p> <b>Description :</b> {description.slice(0, 120)}</p>
+                <button className='btn btn-warning text-white btn-block w-75 order-btn'>Order Now</button>
+              </div>
+            </div>
+          </div>
         </Col>
     );
 };
